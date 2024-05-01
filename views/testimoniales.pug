@@ -1,0 +1,34 @@
+extends ./layout/index.pug
+
+block contenido
+    main.container.mt-5
+        h1.text-center.mt-5 Testimoniales
+        include ./layout/bloqueTestimoniales.pug 
+
+        div.row
+
+            div.col-md-12
+                h2.d-block.w-100.text-center.titulo-testimonial Agrega un testimonial
+            
+                if(errores)
+                    each error in errores
+                        div.alert.col.alert-danger.text-center=error.mensaje
+
+            div.row.justify-content-center.col
+                div.col-md-8
+
+                    form(action="/testimoniales", method="POST" novalidate)
+                        div.form-group  
+                            label(for="nombre") Nombre
+                            input#nombre(type="text",placeholder="Tu nombre",value=nombre,name="nombre",class="form-control")
+                        div.form-group  
+                            label(for="apellido") Apellido
+                            input#apellido(type="text",placeholder="Tu apellido",value=apellido,name="apellido",class="form-control")    
+                        div.form-group  
+                            label(for="email") email 
+                            input#email(type="email",placeholder="Tu correo",name="email",class="form-control",value=email)
+                        div.form-group  
+                            label(for="mensaje") Mensaje
+                            textarea#mensaje(name="mensaje",class="form-control",placeholder="Tu testimonio", rows="2",maxlength="200")=mensaje 
+                        input(type="submit",class="btn btn-success btn-block")    
+                                         

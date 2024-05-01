@@ -1,0 +1,31 @@
+extends ./layout/index.pug
+
+block slider 
+    .slider 
+        h1 Rio de Janeiro 
+        en aventura 
+block contenido
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre nosotros
+        div.row.mb-5
+            .col-md-6 
+                p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aut fuga minima magnam iusto adipisci quod ab nihil itaque. Nostrum aspernatur illo eos, minus culpa saepe provident consectetur modi natus?
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quos modi animi ducimus voluptatibus numquam dicta repudiandae iure cum corporis quidem, inventore voluptatum quia odit nulla explicabo veritatis rem magnam.
+            .col-md-6 
+                img(src="/img/inicio_nosotros.jpg", alt="imagen sobre nosotros",class="img-fluid")
+
+        h2.text-center.mb-5 Viajes
+        include ./layout/bloqueViajes.pug  
+
+    div.descuento 
+        div.container
+            div.row
+                div.col-md-6
+                    div.contenido
+                        h3 5% de Descuento
+                        p.titulo Viaje a Canada
+                        p.fecha 13 de Mayo 2024 - 27 de mayo de 2024 
+                        p.precio 2,500$
+    div.container
+        h2.mt-5.text-center Testimoniales
+        include ./layout/bloqueTestimoniales.pug
